@@ -96,7 +96,7 @@ src/
 **Daniela Melo**  
 _Desarrolladora Full Stack_
 
-📅 Versión: `0.2`  
+📅 Versión: `0.3`  
 📌 Fecha: `03/07/2025`
 
 ---
