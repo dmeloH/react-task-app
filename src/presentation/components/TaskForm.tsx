@@ -1,5 +1,18 @@
 import { useState } from "react";
 
+/**
+ * Componente de formulario para agregar nuevas tareas.
+ *
+ * @component
+ * @param onAdd - Función que se ejecuta al enviar el formulario con el título de la nueva tarea.
+ *
+ * @example
+ * <TaskForm onAdd={(title) => agregarTarea(title)} />
+ *
+ * El formulario valida que el campo de título no esté vacío antes de llamar a la función `onAdd`.
+ * Si el campo está vacío, muestra un mensaje de error.
+ * El campo de entrada se limpia automáticamente después de agregar una tarea correctamente.
+ */
 export default function TaskForm({ onAdd }: { onAdd: (title: string) => void }) {
   const [title, setTitle] = useState("");
   const [error, setError] = useState("");

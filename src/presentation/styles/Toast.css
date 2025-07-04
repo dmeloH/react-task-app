@@ -1,26 +1,30 @@
+/* Estilos base del toast: notificación emergente en la esquina inferior derecha */
 .toast {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #27ae60;
+  background-color: #27ae60; /* Verde éxito */
   color: white;
   padding: 1rem 1.5rem;
   border-radius: 6px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   font-weight: bold;
   z-index: 1000;
-  opacity: 0;
-  transform: translateY(20px);
+  opacity: 0; /* Inicialmente invisible */
+  transform: translateY(20px); /* Leve desplazamiento hacia abajo */
 }
 
+/* Animación para mostrar el toast */
 .fade-in {
   animation: fadeInToast 0.4s forwards;
 }
 
+/* Animación para ocultar el toast */
 .fade-out {
   animation: fadeOutToast 0.4s forwards;
 }
 
+/* Definición de keyframes para entrada suave */
 @keyframes fadeInToast {
   to {
     opacity: 1;
@@ -28,6 +32,7 @@
   }
 }
 
+/* Definición de keyframes para salida suave */
 @keyframes fadeOutToast {
   to {
     opacity: 0;

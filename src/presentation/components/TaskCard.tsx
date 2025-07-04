@@ -1,3 +1,16 @@
+/**
+ * Componente que representa una tarjeta individual de tarea.
+ * Permite visualizar, editar, completar y eliminar una tarea.
+ *
+ * @param task La tarea a mostrar, de tipo `Task`.
+ * @param onEdit Función que se ejecuta al editar el título de la tarea. Recibe el id y el nuevo título.
+ * @param onDelete Función que se ejecuta al eliminar la tarea. Recibe el id de la tarea.
+ * @param onComplete Función que se ejecuta al marcar la tarea como completada o no completada. Recibe el id de la tarea.
+ *
+ * El componente muestra el título de la tarea, un checkbox para marcarla como completada,
+ * y botones para editar o eliminar la tarea. Al editar, permite modificar el título.
+ * Al eliminar, muestra un modal de confirmación antes de proceder.
+ */
 import { useState } from "react";
 import type { Task } from "../../core/domain/models/Task";
 import ConfirmModal from "./ConfirmModal";

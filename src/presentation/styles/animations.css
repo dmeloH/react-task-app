@@ -1,3 +1,7 @@
+/* 
+ * Animación de desvanecimiento con desplazamiento hacia abajo.
+ * Ideal para modales, tarjetas o elementos que deben entrar suavemente.
+ */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -11,6 +15,10 @@
   }
 }
 
+/* 
+ * Animación de entrada deslizante desde la izquierda.
+ * Útil para paneles laterales o elementos que aparecen desde el borde.
+ */
 .slide-in {
   animation: slideIn 0.4s ease forwards;
 }
