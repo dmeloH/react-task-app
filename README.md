@@ -1,69 +1,106 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# ✅ Task List - Frontend (React + TypeScript + Vite + Tailwind CSS)
 
-Currently, two official plugins are available:
+Interfaz web moderna para gestionar tareas, desarrollada con **React**, **TypeScript**, **Tailwind CSS**, **Vite** y principios de **arquitectura limpia**. Este proyecto representa la capa frontend de una aplicación fullstack. Requiere un backend funcional desarrollado en .NET para operar correctamente.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 📌 Características
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Arquitectura limpia: separación clara entre `core`, `useCases`, `infrastructure` y `presentation`.
+- Estilos modernos y responsivos con **Tailwind CSS**.
+- Animaciones suaves con CSS puro para transiciones, modales y notificaciones.
+- Componentes reutilizables (`TaskCard`, `Toast`, `ConfirmModal`, etc.).
+- Notificaciones flotantes y confirmación antes de eliminar tareas.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## ⚙️ Requisitos
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Node.js 18+
+- NPM o Yarn
+- Backend corriendo en: `http://localhost:7277/api/tasks` (por defecto)
+
+---
+
+## 🚀 Instrucciones para ejecutar
+
+### 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/dmeloH/react-task-app.git
+cd react-task-app
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Instalar dependencias
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+### 3. Ejecutar la aplicación
+
+```bash
+npm run dev
+```
+
+Se abrirá en: `http://localhost:5173`
+
+---
+
+## 🔁 Conexión con el Backend
+
+Este frontend requiere que el backend esté activo en:
+
+```
+http://localhost:7277/api/tasks
+```
+
+> Puedes ajustar la URL en `src/infrastructure/api/taskApi.ts` si tu backend usa otro puerto o dominio.
+
+---
+
+## 🧱 Estructura de Carpetas
+
+```
+src/
+├── core/
+│   ├── domain/
+│   │   └── models/Task.ts
+│   └── useCases/
+│       ├── getTasks.ts
+│       ├── addTask.ts
+│       ├── updateTaskTitle.ts
+│       ├── completeTask.ts
+│       └── deleteTask.ts
+├── infrastructure/
+│   └── api/taskApi.ts
+├── presentation/
+│   ├── components/
+│   │   ├── TaskForm.tsx
+│   │   ├── TaskItem.tsx
+│   │   └── TaskList.tsx
+│   ├── pages/
+│   │   └── Home.tsx
+│   └── styles/
+│       └── animations.css
+├── App.tsx
+├── main.tsx
+└── index.css
+```
+
+---
+
+## 👩‍💻 Autoría
+
+**Daniela Melo**  
+_Desarrolladora Full Stack_
+
+📅 Versión: `0.2`  
+📌 Fecha: `03/07/2025`
+
+---
+
+## 📄 Licencia
+
+Este proyecto es solo para fines educativos o de evaluación técnica.
