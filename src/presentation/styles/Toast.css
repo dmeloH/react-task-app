@@ -1,0 +1,36 @@
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #27ae60;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  font-weight: bold;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.fade-in {
+  animation: fadeInToast 0.4s forwards;
+}
+
+.fade-out {
+  animation: fadeOutToast 0.4s forwards;
+}
+
+@keyframes fadeInToast {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOutToast {
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
